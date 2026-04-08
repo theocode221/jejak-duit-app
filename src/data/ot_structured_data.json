@@ -1,0 +1,3449 @@
+{
+  "sourceWorkbook": "ot.xlsx",
+  "monthlyOT": [
+    {
+      "sheet": "apr25",
+      "month": "apr",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": null,
+      "entries": [
+        {
+          "date": "2025-03-17T00:00:00",
+          "hour": 6,
+          "double": null
+        },
+        {
+          "date": "2025-04-08T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2025-04-12T00:00:00",
+          "hour": 5,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 12,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 236.52,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 236.52,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 117,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 373.65,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2963.87,
+          "double": null
+        }
+      ],
+      "plannedEntries": []
+    },
+    {
+      "sheet": "may25",
+      "month": "may",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-04-19T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-04-23T00:00:00",
+          "hour": 1.5,
+          "double": null
+        },
+        {
+          "date": "2025-05-01T00:00:00",
+          "hour": null,
+          "double": 6.5
+        },
+        {
+          "date": "2025-05-03T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-05-08T00:00:00",
+          "hour": 1.5,
+          "double": null
+        },
+        {
+          "date": "2025-05-15T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 12,
+          "double": 6.5
+        },
+        {
+          "date": "earning",
+          "hour": 236.52,
+          "double": 170.82
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 407.34000000000003,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 130,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 375.05,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3146.29,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "spay",
+          "hour": 353.14,
+          "double": null
+        },
+        {
+          "date": "atome",
+          "hour": 68.56,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 58,
+          "double": null
+        },
+        {
+          "date": "gym",
+          "hour": 95,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "finas",
+          "hour": 127,
+          "double": null
+        },
+        {
+          "date": "convo",
+          "hour": 360,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2158.7,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 805.1700000000001,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "utilities"
+        }
+      ]
+    },
+    {
+      "sheet": "june25",
+      "month": "june",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-05-17T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-05-31T00:00:00",
+          "hour": 4.5,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 8.5,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 167.535,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 167.535,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 69,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 373.65,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2846.8849999999998,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 58,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 150,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 1000,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2255,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 891.29,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        }
+      ]
+    },
+    {
+      "sheet": "july25",
+      "month": "july",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-06-21T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-06-28T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-07-01T00:00:00",
+          "hour": 5.5,
+          "double": null
+        },
+        {
+          "date": "2025-07-12T00:00:00",
+          "hour": 5,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 18.5,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 364.635,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 364.76,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 60,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 374.35,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3034.4100000000003,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 58,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 1000,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2205,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 641.8849999999998,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": "2025-06-21T00:00:00",
+          "hour": 4
+        },
+        {
+          "date": "2025-06-28T00:00:00",
+          "hour": 4
+        },
+        {
+          "date": "2025-07-05T00:00:00",
+          "hour": 4
+        },
+        {
+          "date": "2025-07-12T00:00:00",
+          "hour": 4
+        },
+        {
+          "date": "2025-07-01T00:00:00",
+          "hour": 5
+        },
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        }
+      ]
+    },
+    {
+      "sheet": "aug25",
+      "month": "aug",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-07-26T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-08-02T00:00:00",
+          "hour": 4.5,
+          "double": null
+        },
+        {
+          "date": "2025-08-12T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2025-08-13T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 10.5,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 206.955,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 207.75,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 70,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 374.35,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2887.4,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 58,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 1000,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2440,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 594.4100000000003,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": "2025-07-26T00:00:00",
+          "hour": 4
+        },
+        {
+          "date": "2025-08-02T00:00:00",
+          "hour": 5
+        },
+        {
+          "date": "2025-08-09T00:00:00",
+          "hour": 5
+        },
+        {
+          "date": null,
+          "hour": 14
+        },
+        {
+          "date": null,
+          "hour": 236.52
+        },
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "roadtax moto"
+        }
+      ]
+    },
+    {
+      "sheet": "sept25",
+      "month": "sept",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": null,
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 78.84,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 78.84,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 316.06,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 70,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 410.05,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3038.85,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 18,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "depo",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2137,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 750.4000000000001,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        }
+      ]
+    },
+    {
+      "sheet": "okt25",
+      "month": "okt",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-09-18T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2025-09-20T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-09-27T00:00:00",
+          "hour": 11,
+          "double": null
+        },
+        {
+          "date": "2025-10-04T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-10-11T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": null,
+          "hour": 2,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 26,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 512.46,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 512.46,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 175.26,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 360,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 396.97,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3634.75,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 18,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 600,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 280,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2367,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 671.8499999999999,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "dispo"
+        }
+      ]
+    },
+    {
+      "sheet": "nov25",
+      "month": "nov",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-10-18T00:00:00",
+          "hour": 5,
+          "double": null
+        },
+        {
+          "date": "2025-11-30T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": null,
+          "hour": 5,
+          "double": null
+        },
+        {
+          "date": null,
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 15,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 295.65000000000003,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 295.65000000000003,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 338.92,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 413.45,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3205.1200000000003,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 18,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 800,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 280,
+          "double": null
+        },
+        {
+          "date": "hutang",
+          "hour": 150.49,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2767.49,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 867.2600000000002,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": "2025-11-08T00:00:00",
+          "hour": null
+        },
+        {
+          "date": "2025-11-15T00:00:00",
+          "hour": null
+        },
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    },
+    {
+      "sheet": "dec25",
+      "month": "dec",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-11-25T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2025-11-29T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2025-12-01T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2025-12-03T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2025-12-06T00:00:00",
+          "hour": 3,
+          "double": null
+        },
+        {
+          "date": "2025-12-13T00:00:00",
+          "hour": 6,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 16,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 315.36,
+          "double": null
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 315.36,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 105,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 391.88,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 413.45,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3382.7900000000004,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 18,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 280,
+          "double": null
+        },
+        {
+          "date": "spay",
+          "hour": 217.8,
+          "double": null
+        },
+        {
+          "date": "rokok",
+          "hour": 120,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2554.8,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 650.3200000000002,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    },
+    {
+      "sheet": "jan26",
+      "month": "jan",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2025-12-17T00:00:00",
+          "hour": 2,
+          "double": null
+        },
+        {
+          "date": "2026-01-01T00:00:00",
+          "hour": null,
+          "double": 5
+        },
+        {
+          "date": "2026-01-02T00:00:00",
+          "hour": 4.5,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 6.5,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 128.115,
+          "double": 131.4
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 259.515,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 373.65,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2869.865,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 35,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 280,
+          "double": null
+        },
+        {
+          "date": "spay",
+          "hour": 217.8,
+          "double": null
+        },
+        {
+          "date": "rokok",
+          "hour": 120,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2536.8,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 845.9900000000002,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    },
+    {
+      "sheet": "feb26",
+      "month": "jan",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2026-01-24T00:00:00",
+          "hour": 6,
+          "double": null
+        },
+        {
+          "date": "2026-02-06T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2026-02-07T00:00:00",
+          "hour": 4,
+          "double": null
+        },
+        {
+          "date": "2026-02-08T00:00:00",
+          "hour": 8,
+          "double": 1.5
+        },
+        {
+          "date": "total hour",
+          "hour": 19,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 374.49,
+          "double": 39.42
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 413.91,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 110,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 376.94,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 3130.97,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": "e"
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": "r"
+        },
+        {
+          "date": "digi",
+          "hour": 22,
+          "double": "r"
+        },
+        {
+          "date": "unifi",
+          "hour": 22,
+          "double": "o"
+        },
+        {
+          "date": "xox",
+          "hour": 0,
+          "double": "r"
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "insuran",
+          "hour": 210.52,
+          "double": null
+        },
+        {
+          "date": "cc",
+          "hour": 193.3,
+          "double": null
+        },
+        {
+          "date": "duit raya",
+          "hour": 120,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2266.82,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 603.0449999999996,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    },
+    {
+      "sheet": "mac26",
+      "month": "mac",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "2026-02-28T00:00:00",
+          "hour": 7,
+          "double": null
+        },
+        {
+          "date": "2026-03-05T00:00:00",
+          "hour": 1,
+          "double": null
+        },
+        {
+          "date": "2026-03-14T00:00:00",
+          "hour": 6,
+          "double": null
+        },
+        {
+          "date": "total hour",
+          "hour": 14,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 275.94,
+          "double": 0
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 275.94,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 65,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 424.35,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2900.59,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 300,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "insuran",
+          "hour": 210.52,
+          "double": null
+        },
+        {
+          "date": "cc",
+          "hour": 193.3,
+          "double": null
+        },
+        {
+          "date": "duit raya",
+          "hour": 120,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2366.82,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 764.1499999999996,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    },
+    {
+      "sheet": "apr26",
+      "month": "apr",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "total hour",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 0,
+          "double": 0
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 45,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 217,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 413.45,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2832.55,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "insuran",
+          "hour": 210.52,
+          "double": null
+        },
+        {
+          "date": "cc",
+          "hour": 225.54,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2201.06,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 699.5300000000002,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    },
+    {
+      "sheet": "may26",
+      "month": "may",
+      "rateFormula": "=1.5*13.14",
+      "ratePerHourFormula": "=H1/3*4",
+      "entries": [
+        {
+          "date": "total hour",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "earning",
+          "hour": 0,
+          "double": 0
+        },
+        {
+          "date": "basic",
+          "hour": 2734,
+          "double": null
+        },
+        {
+          "date": "petrol",
+          "hour": 250,
+          "double": null
+        },
+        {
+          "date": "ot",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "misc",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "ioe",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "medical",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "deduct ",
+          "hour": 413.45,
+          "double": null
+        },
+        {
+          "date": "est:",
+          "hour": 2570.55,
+          "double": null
+        },
+        {
+          "date": "kereta",
+          "hour": 427,
+          "double": null
+        },
+        {
+          "date": "mara",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "digi",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "unifi",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "xox",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "umobile",
+          "hour": 22,
+          "double": null
+        },
+        {
+          "date": "maint",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "hiking",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "bilik",
+          "hour": 0,
+          "double": null
+        },
+        {
+          "date": "kereta acc",
+          "hour": 50,
+          "double": null
+        },
+        {
+          "date": "parents",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "saving",
+          "hour": 400,
+          "double": null
+        },
+        {
+          "date": "dispo",
+          "hour": 200,
+          "double": null
+        },
+        {
+          "date": "care",
+          "hour": 100,
+          "double": null
+        },
+        {
+          "date": "insuran",
+          "hour": 210.52,
+          "double": null
+        },
+        {
+          "date": "cc",
+          "hour": 225.54,
+          "double": null
+        },
+        {
+          "date": "total",
+          "hour": 2201.06,
+          "double": null
+        },
+        {
+          "date": "bal ",
+          "hour": 699.5300000000002,
+          "double": null
+        }
+      ],
+      "plannedEntries": [
+        {
+          "date": null,
+          "hour": "maint"
+        },
+        {
+          "date": null,
+          "hour": "hiking/run"
+        },
+        {
+          "date": null,
+          "hour": "bilik"
+        },
+        {
+          "date": null,
+          "hour": "kereta acc"
+        },
+        {
+          "date": null,
+          "hour": "selfcare"
+        }
+      ]
+    }
+  ],
+  "eventBudgets": [
+    {
+      "event": "medan 2026",
+      "perHeadItems": [
+        {
+          "item": "per head",
+          "amount": null
+        },
+        {
+          "item": "flight",
+          "amount": 412.13
+        },
+        {
+          "item": "insurance",
+          "amount": 18.75
+        },
+        {
+          "item": "transport",
+          "amount": 129.1
+        },
+        {
+          "item": "accomodation",
+          "amount": 99.105
+        }
+      ],
+      "stayBreakdown": [
+        {
+          "item": "sibayak",
+          "estimated": 76.95,
+          "actual": 77.6
+        },
+        {
+          "item": "lakeside",
+          "estimated": 67.13,
+          "actual": 63.519999999999996
+        },
+        {
+          "item": "khemah",
+          "estimated": 54.13,
+          "actual": 57.46
+        },
+        {
+          "item": null,
+          "estimated": 198.20999999999998,
+          "actual": 198.58
+        }
+      ],
+      "totals": {
+        "estimatedStayTotal": 198.20999999999998,
+        "actualStayTotal": 198.58,
+        "actualPerHeadTotal": 246.95499999999998,
+        "otherActuals": [
+          "2026-02-11T00:00:00"
+        ]
+      }
+    }
+  ],
+  "moneyPlans2025": {
+    "plans": [
+      {
+        "item": "gbh",
+        "expenses": 100,
+        "month": 6
+      },
+      {
+        "item": "nuang",
+        "expenses": 175,
+        "month": 6
+      },
+      {
+        "item": "yong yap",
+        "expenses": 290,
+        "month": 7
+      },
+      {
+        "item": "korga",
+        "expenses": 631,
+        "month": 8
+      },
+      {
+        "item": "AFC",
+        "expenses": 220,
+        "month": 9
+      },
+      {
+        "item": "NHM",
+        "expenses": 200,
+        "month": 10
+      },
+      {
+        "item": "prepare gear",
+        "expenses": 2000,
+        "month": null
+      },
+      {
+        "item": "total",
+        "expenses": 3616,
+        "month": 6
+      },
+      {
+        "item": "done",
+        "expenses": null,
+        "month": null
+      },
+      {
+        "item": "gbh",
+        "expenses": 100,
+        "month": null
+      },
+      {
+        "item": "nuang",
+        "expenses": 175,
+        "month": null
+      },
+      {
+        "item": "yong yap",
+        "expenses": 547.57,
+        "month": null
+      },
+      {
+        "item": "korga",
+        "expenses": 631,
+        "month": null
+      },
+      {
+        "item": "AFC",
+        "expenses": 220,
+        "month": null
+      },
+      {
+        "item": "NHM",
+        "expenses": 200,
+        "month": null
+      },
+      {
+        "item": "prepare gear",
+        "expenses": 1515.97,
+        "month": null
+      },
+      {
+        "item": "total",
+        "expenses": 3389.54,
+        "month": null
+      },
+      {
+        "item": "mytax",
+        "expenses": "1lyukinE",
+        "month": null
+      }
+    ],
+    "moneyTracker": [
+      {
+        "item": "aeon",
+        "amount": 509.84
+      },
+      {
+        "item": "asb",
+        "amount": 1200
+      },
+      {
+        "item": null,
+        "amount": 1000
+      },
+      {
+        "item": null,
+        "amount": 1000
+      },
+      {
+        "item": null,
+        "amount": 1000
+      },
+      {
+        "item": "total",
+        "amount": 4709.84
+      }
+    ],
+    "yy": [
+      {
+        "item": "yy",
+        "amount": "minyak"
+      },
+      {
+        "item": null,
+        "amount": 50
+      },
+      {
+        "item": null,
+        "amount": 40
+      },
+      {
+        "item": null,
+        "amount": 20
+      },
+      {
+        "item": null,
+        "amount": 50
+      },
+      {
+        "item": null,
+        "amount": 160
+      },
+      {
+        "item": null,
+        "amount": "tol"
+      },
+      {
+        "item": null,
+        "amount": 50.84
+      },
+      {
+        "item": null,
+        "amount": 25
+      },
+      {
+        "item": null,
+        "amount": 21.73
+      },
+      {
+        "item": null,
+        "amount": 97.57000000000001
+      },
+      {
+        "item": null,
+        "amount": "makan "
+      },
+      {
+        "item": null,
+        "amount": 100
+      },
+      {
+        "item": null,
+        "amount": "pakej"
+      },
+      {
+        "item": null,
+        "amount": 190
+      },
+      {
+        "item": null,
+        "amount": "total"
+      },
+      {
+        "item": null,
+        "amount": 547.5699999999999
+      }
+    ],
+    "korga": [
+      {
+        "item": "depo",
+        "amount": 100
+      },
+      {
+        "item": "full",
+        "amount": 120
+      },
+      {
+        "item": "baju",
+        "amount": 110
+      },
+      {
+        "item": "minyak",
+        "amount": 135
+      },
+      {
+        "item": "tol",
+        "amount": 116
+      },
+      {
+        "item": "makan ",
+        "amount": 50
+      },
+      {
+        "item": null,
+        "amount": 631
+      }
+    ]
+  },
+  "moneyPlans2026": {
+    "plans": [
+      {
+        "item": "twincity",
+        "expenses": 108,
+        "month": 1
+      },
+      {
+        "item": "selama",
+        "expenses": 300,
+        "month": 2
+      },
+      {
+        "item": "medan",
+        "expenses": 1159.85,
+        "month": 2
+      },
+      {
+        "item": "perlis",
+        "expenses": 350,
+        "month": 4
+      },
+      {
+        "item": "g7",
+        "expenses": 500,
+        "month": "5@6"
+      },
+      {
+        "item": "cultra",
+        "expenses": 700,
+        "month": 7
+      },
+      {
+        "item": "boom+",
+        "expenses": 300,
+        "month": 9
+      },
+      {
+        "item": "tnu",
+        "expenses": 400,
+        "month": 10
+      },
+      {
+        "item": "klscm",
+        "expenses": 400,
+        "month": 10
+      },
+      {
+        "item": "total",
+        "expenses": 4217.85,
+        "month": null
+      },
+      {
+        "item": "done",
+        "expenses": null,
+        "month": null
+      },
+      {
+        "item": "twincity",
+        "expenses": 108,
+        "month": null
+      },
+      {
+        "item": "selama",
+        "expenses": 382.81,
+        "month": null
+      },
+      {
+        "item": "medan",
+        "expenses": 1082.15,
+        "month": null
+      },
+      {
+        "item": "perlis",
+        "expenses": 62.77,
+        "month": null
+      },
+      {
+        "item": "g7",
+        "expenses": 0,
+        "month": null
+      },
+      {
+        "item": "cultra",
+        "expenses": 455.2,
+        "month": null
+      },
+      {
+        "item": "tnu",
+        "expenses": 121.5,
+        "month": null
+      },
+      {
+        "item": "boom+",
+        "expenses": 0,
+        "month": null
+      },
+      {
+        "item": "klscm",
+        "expenses": 0,
+        "month": null
+      },
+      {
+        "item": "total",
+        "expenses": 2212.43,
+        "month": null
+      },
+      {
+        "item": "bal",
+        "expenses": null,
+        "month": null
+      },
+      {
+        "item": "twincity",
+        "expenses": 0,
+        "month": null
+      },
+      {
+        "item": "selama",
+        "expenses": -82.81,
+        "month": null
+      },
+      {
+        "item": "medan",
+        "expenses": 77.69999999999982,
+        "month": null
+      },
+      {
+        "item": "perlis",
+        "expenses": 287.23,
+        "month": null
+      },
+      {
+        "item": "g7",
+        "expenses": 500,
+        "month": null
+      },
+      {
+        "item": "cultra",
+        "expenses": 244.8,
+        "month": null
+      },
+      {
+        "item": "boom+",
+        "expenses": 300,
+        "month": null
+      },
+      {
+        "item": "klscm",
+        "expenses": 400,
+        "month": null
+      },
+      {
+        "item": "total",
+        "expenses": 1726.9199999999998,
+        "month": null
+      },
+      {
+        "item": "mytax",
+        "expenses": "1lyukinE",
+        "month": null
+      }
+    ],
+    "twincity": [
+      {
+        "item": "transport",
+        "amount": 20
+      },
+      {
+        "item": "gambar",
+        "amount": 58
+      },
+      {
+        "item": "makan",
+        "amount": 30
+      },
+      {
+        "item": "total",
+        "amount": 108
+      }
+    ],
+    "sultra": [
+      {
+        "amount": 50
+      },
+      {
+        "amount": 53.45
+      },
+      {
+        "amount": 50
+      },
+      {
+        "amount": 153.45
+      },
+      {
+        "amount": 24.6
+      },
+      {
+        "amount": 2.13
+      },
+      {
+        "amount": 3.5
+      },
+      {
+        "amount": 23.7
+      },
+      {
+        "amount": 58.38
+      },
+      {
+        "amount": 112.31
+      },
+      {
+        "amount": "total"
+      },
+      {
+        "amount": 265.76
+      },
+      {
+        "amount": 81
+      },
+      {
+        "amount": 12
+      },
+      {
+        "amount": 50
+      },
+      {
+        "amount": 200
+      },
+      {
+        "amount": 40
+      },
+      {
+        "amount": 383
+      }
+    ],
+    "raya": [
+      {
+        "item": "baju raya",
+        "amount": 200
+      },
+      {
+        "item": "anak buah",
+        "amount": 120
+      },
+      {
+        "item": "uda",
+        "amount": 100
+      },
+      {
+        "item": "mama",
+        "amount": 200
+      },
+      {
+        "item": "ayah",
+        "amount": 200
+      },
+      {
+        "item": "tukar ",
+        "amount": 100
+      },
+      {
+        "item": "total",
+        "amount": 920
+      },
+      {
+        "item": "from bonus",
+        "amount": 600
+      },
+      {
+        "item": "200 dari parents",
+        "amount": 120
+      }
+    ],
+    "bonus2026": [
+      {
+        "amount": 3000
+      },
+      {
+        "amount": -65,
+        "item": "batt"
+      },
+      {
+        "amount": -600,
+        "item": "parents",
+        "note": "in parents"
+      },
+      {
+        "amount": -121.5,
+        "item": "tnu"
+      },
+      {
+        "amount": -61.18,
+        "item": "runmount",
+        "note": "in spaylater"
+      },
+      {
+        "amount": -27.88,
+        "item": "topi",
+        "note": "in spaylater"
+      },
+      {
+        "amount": -200,
+        "item": "stick",
+        "note": "in spaylater"
+      },
+      {
+        "amount": -2000,
+        "item": "asnb"
+      },
+      {
+        "amount": 75.56,
+        "item": "sell fon"
+      },
+      {
+        "amount": "BAL"
+      },
+      {
+        "amount": 0
+      }
+    ],
+    "sellFonLaptop": [
+      {
+        "amount": 240
+      },
+      {
+        "amount": 300
+      },
+      {
+        "amount": -31.98,
+        "item": "hike/run pinjam "
+      },
+      {
+        "amount": -450,
+        "item": "rc + batt"
+      },
+      {
+        "amount": 500
+      },
+      {
+        "amount": 558.02
+      },
+      {
+        "amount": 2140,
+        "item": "patut total"
+      },
+      {
+        "amount": 1690,
+        "item": "bal"
+      }
+    ],
+    "customBilik": [
+      {
+        "amount": 41,
+        "item": "plywood"
+      },
+      {
+        "amount": 13.68,
+        "item": "pvc"
+      },
+      {
+        "amount": 13.88,
+        "item": "kiecik2"
+      },
+      {
+        "amount": 8.8,
+        "item": "spray"
+      },
+      {
+        "amount": 39.17,
+        "item": "karpet"
+      },
+      {
+        "amount": 280.13,
+        "item": "monitor"
+      },
+      {
+        "amount": 78.02,
+        "item": "meja"
+      },
+      {
+        "amount": "spay 3m",
+        "item": null
+      },
+      {
+        "amount": 13.67,
+        "item": null
+      },
+      {
+        "amount": 4.56,
+        "item": null
+      },
+      {
+        "amount": 4.63,
+        "item": null
+      },
+      {
+        "amount": 13.06,
+        "item": null
+      },
+      {
+        "amount": 93.38,
+        "item": null
+      },
+      {
+        "amount": 26.01,
+        "item": null
+      },
+      {
+        "amount": null,
+        "item": "prepared"
+      },
+      {
+        "amount": 155.31,
+        "item": 30.68
+      },
+      {
+        "amount": null,
+        "item": "bal"
+      },
+      {
+        "amount": null,
+        "item": 124.63
+      }
+    ]
+  },
+  "gearWishlist": [
+    {
+      "item": "backpack",
+      "amount": null,
+      "extra": "kiv"
+    },
+    {
+      "item": "makanan",
+      "amount": null
+    },
+    {
+      "item": 2026,
+      "amount": null
+    },
+    {
+      "item": "carrier (40-50L)",
+      "amount": 253.8
+    },
+    {
+      "item": "nasi goreng ",
+      "amount": 5,
+      "extra": 22.85
+    },
+    {
+      "item": "trail run",
+      "amount": null
+    },
+    {
+      "item": "daypack (10-15L)",
+      "amount": 0
+    },
+    {
+      "item": "nasi berlauk",
+      "amount": 5,
+      "extra": 51.06
+    },
+    {
+      "item": "vest",
+      "amount": 104.95
+    },
+    {
+      "item": "bagpack",
+      "amount": 150
+    },
+    {
+      "item": "flask",
+      "amount": 0
+    },
+    {
+      "item": "drone ",
+      "amount": 653.4
+    },
+    {
+      "item": "bowl & cup",
+      "amount": 8
+    },
+    {
+      "item": "technical gear",
+      "amount": null
+    },
+    {
+      "item": "batt",
+      "amount": 65
+    },
+    {
+      "item": "headlamp",
+      "amount": 90.25
+    },
+    {
+      "item": "stick",
+      "amount": 200
+    },
+    {
+      "item": "gloves",
+      "amount": 29
+    },
+    {
+      "item": "topi",
+      "amount": 27.88
+    },
+    {
+      "item": "snowcap",
+      "amount": null,
+      "extra": 30
+    },
+    {
+      "item": "runmount",
+      "amount": 104.76
+    },
+    {
+      "item": "topi",
+      "amount": 0
+    },
+    {
+      "item": "buff",
+      "amount": 0
+    },
+    {
+      "item": "video",
+      "amount": null
+    },
+    {
+      "item": "shade",
+      "amount": 0
+    },
+    {
+      "item": "drone acc",
+      "amount": 450
+    },
+    {
+      "item": "earplug",
+      "amount": null,
+      "extra": 15
+    },
+    {
+      "item": "hiking stick",
+      "amount": 178.48
+    },
+    {
+      "item": "powerbank",
+      "amount": 48.49
+    },
+    {
+      "item": "kasut",
+      "amount": 0
+    },
+    {
+      "item": "stokin",
+      "amount": 0
+    },
+    {
+      "item": "gaiter",
+      "amount": null,
+      "extra": 20
+    },
+    {
+      "item": "camping cup/plate (opt)",
+      "amount": 2
+    },
+    {
+      "item": "stove",
+      "amount": 12.8
+    },
+    {
+      "item": "cooking set (opt)",
+      "amount": 27.09
+    },
+    {
+      "item": "water bladder",
+      "amount": 0
+    },
+    {
+      "item": "softflask ",
+      "amount": 35
+    },
+    {
+      "item": "softflask ",
+      "amount": 11.27
+    },
+    {
+      "item": "extra battery",
+      "amount": null
+    },
+    {
+      "item": "emergency blanket",
+      "amount": 4.95
+    },
+    {
+      "item": "baju (2/3 set)",
+      "amount": null
+    },
+    {
+      "item": "base layer (thermal bl)",
+      "amount": null,
+      "extra": 58
+    },
+    {
+      "item": "middle (half zipper/t shirt)",
+      "amount": 0
+    },
+    {
+      "item": "base layer bot",
+      "amount": null,
+      "extra": 58
+    },
+    {
+      "item": "outer (jacket)",
+      "amount": 100
+    },
+    {
+      "item": "poncho",
+      "amount": null
+    },
+    {
+      "item": "sleeping system",
+      "amount": null
+    },
+    {
+      "item": "tent ",
+      "amount": 457.24
+    },
+    {
+      "item": "sleeping bag",
+      "amount": 0
+    },
+    {
+      "item": "sleeping mat",
+      "amount": 57.9
+    },
+    {
+      "item": "pillow (opt)",
+      "amount": 9.9
+    },
+    {
+      "item": "sheet",
+      "amount": 29.52
+    },
+    {
+      "item": "others",
+      "amount": null
+    },
+    {
+      "item": "box storage",
+      "amount": 18.28
+    },
+    {
+      "item": null,
+      "amount": 1515.97
+    },
+    {
+      "item": "done",
+      "amount": 3031.94
+    }
+  ],
+  "sideIncome": [
+    {
+      "amount": 344.52,
+      "description": "affiliate",
+      "incomeOrBalance": 344.52
+    },
+    {
+      "amount": -165.32,
+      "description": "mic",
+      "incomeOrBalance": 0.54
+    },
+    {
+      "amount": -178.48,
+      "description": "hiking stick",
+      "incomeOrBalance": 100
+    },
+    {
+      "amount": 0.54,
+      "description": "profit",
+      "incomeOrBalance": 424.49
+    },
+    {
+      "amount": 100,
+      "description": "speed electrofuel",
+      "incomeOrBalance": 1.33
+    },
+    {
+      "amount": 424.49,
+      "description": "affiliate",
+      "incomeOrBalance": 1.34
+    },
+    {
+      "amount": -43,
+      "description": "speed electrofuel",
+      "incomeOrBalance": 1.05
+    },
+    {
+      "amount": -67,
+      "description": "mic receiver",
+      "incomeOrBalance": 323.57
+    },
+    {
+      "amount": 1.33,
+      "description": "profit",
+      "incomeOrBalance": 1.2
+    },
+    {
+      "amount": 1.34,
+      "description": "profit",
+      "incomeOrBalance": null
+    },
+    {
+      "amount": 1.05,
+      "description": "profit",
+      "incomeOrBalance": null
+    },
+    {
+      "amount": 323.57,
+      "description": "affiliate",
+      "incomeOrBalance": null
+    },
+    {
+      "amount": -108.99,
+      "description": "mic ",
+      "incomeOrBalance": null
+    },
+    {
+      "amount": 1.2,
+      "description": "profit",
+      "incomeOrBalance": null
+    },
+    {
+      "amount": 635.25,
+      "description": null,
+      "incomeOrBalance": 1198.04
+    }
+  ],
+  "events2026": [
+    {
+      "event": "perlis",
+      "date": "2026-04-25T00:00:00"
+    },
+    {
+      "event": "utm",
+      "date": "2026-05-22T00:00:00"
+    },
+    {
+      "event": "iskandar",
+      "date": "2026-06-14T00:00:00"
+    },
+    {
+      "event": "cultra",
+      "date": "2026-07-19T00:00:00"
+    },
+    {
+      "event": "belumut",
+      "date": "2026-08-02T00:00:00"
+    },
+    {
+      "event": "tangkak",
+      "date": "2026-08-16T00:00:00"
+    },
+    {
+      "event": "kluang",
+      "date": "2026-09-20T00:00:00"
+    },
+    {
+      "event": "tnu",
+      "date": "2026-10-23T00:00:00"
+    }
+  ],
+  "dueDates": [
+    {
+      "bill": "kereta",
+      "dueDate": "27hb"
+    },
+    {
+      "bill": "cc",
+      "dueDate": "8hb"
+    },
+    {
+      "bill": "spaylater",
+      "dueDate": "1hb"
+    },
+    {
+      "bill": "asb",
+      "dueDate": "31hb"
+    },
+    {
+      "bill": "xox rumah",
+      "dueDate": "25hb"
+    },
+    {
+      "bill": "xox mama",
+      "dueDate": "17hb"
+    },
+    {
+      "bill": "xox sendiri",
+      "dueDate": "26hb"
+    }
+  ]
+}
