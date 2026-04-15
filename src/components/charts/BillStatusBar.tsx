@@ -20,13 +20,11 @@ type Row = { status: BillStatus; count: number };
 const labels: Record<BillStatus, string> = {
   paid: 'Paid',
   unpaid: 'Unpaid',
-  upcoming: 'Upcoming',
 };
 
 const STATUS_HEX: Record<BillStatus, string> = {
   paid: '#059669',
   unpaid: '#dc2626',
-  upcoming: '#d97706',
 };
 
 export function BillStatusBar({ data }: { data: Row[] }) {

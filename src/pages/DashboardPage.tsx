@@ -1,13 +1,20 @@
 import {
   ArrowDownRight,
   ArrowUpRight,
+  Banknote,
   Calendar,
+  CalendarClock,
+  ChevronRight,
+  CreditCard,
   PiggyBank,
+  Plane,
   Receipt,
   Timer,
+  TrendingUp,
   Wallet,
   Zap,
 } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 import { AppShell } from '@/components/layout/AppShell';
 import { StatCard } from '@/components/common/StatCard';
 import { PageSection } from '@/components/common/PageSection';
@@ -17,6 +24,7 @@ import { IncomeExpenseBar } from '@/components/charts/IncomeExpenseBar';
 import { PlannedActualBars } from '@/components/charts/PlannedActualBars';
 import { BillStatusBar } from '@/components/charts/BillStatusBar';
 import { useMonth } from '@/context/MonthContext';
+import { useInstallmentsStore } from '@/features/installments/useInstallmentsStore';
 import { useFinance } from '@/state/FinanceContext';
 import {
   getDashboardSummary,
@@ -27,11 +35,26 @@ import {
   getEvents,
   getReferenceDate,
 } from '@/state/financeSelectors';
-import { formatMYR, formatDate } from '@/utils/format';
+import { formatMYR, formatMYR2, formatDate } from '@/utils/format';
+import type { LucideIcon } from 'lucide-react';
+
+const WORKSPACES: {
+  to: string;
+  label: string;
+  Icon: LucideIcon;
+}[] = [
+  { to: '/budget', label: 'Monthly Budget', Icon: Wallet },
+  { to: '/income', label: 'Salary & OT', Icon: Banknote },
+  { to: '/bills', label: 'Bills', Icon: CalendarClock },
+  { to: '/events', label: 'Events', Icon: Plane },
+  { to: '/side-income', label: 'Side Income', Icon: TrendingUp },
+  { to: '/installments', label: 'Installment', Icon: CreditCard },
+];
 
 export function DashboardPage() {
-  const { month, monthLabel } = useMonth();
+  const { month } = useMonth();
   const { state } = useFinance();
+  const installments = useInstallmentsStore(month);
   const d = getDashboardSummary(state, month);
   const expenseByCategory = getChartExpenseByCategory(state, month);
   const incomeVsExpense = getChartIncomeVsExpense(state, month);
@@ -46,43 +69,53 @@ export function DashboardPage() {
     )
     .slice(0, 4);
 
-  const burnPct =
-    d.totalIncome > 0
-      ? Math.round((d.totalExpenses / d.totalIncome) * 100)
-      : 0;
-
   return (
-    <AppShell
-      kicker="Overview"
-      title="Command centre"
-      subtitle={`Editable local data — ${d.monthLabel}. Charts follow the month selector.`}
-    >
-      <PageSection
-        kicker="Pulse"
-        title="Month snapshot"
-        description="Primary KPIs from your salary stack, overtime, extras, and side projects versus tracked spend."
-      >
+    <AppShell title="Dashboard">
+      <PageSection title="Workspaces">
+        <nav className="dash-nav" aria-label="App workspaces">
+          {WORKSPACES.map(({ to, label, Icon }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `dash-nav-card${isActive ? ' is-active' : ''}`
+              }
+            >
+              <span className="dash-nav-card__icon" aria-hidden>
+                <Icon size={20} strokeWidth={1.7} />
+              </span>
+              <span className="dash-nav-card__body">
+                <span className="dash-nav-card__title">{label}</span>
+              </span>
+              <ChevronRight
+                className="dash-nav-card__go"
+                size={18}
+                strokeWidth={2}
+                aria-hidden
+              />
+            </NavLink>
+          ))}
+        </nav>
+      </PageSection>
+
+      <PageSection title="Month snapshot">
         <div className="bajet-stat-grid">
           <StatCard
             variant="hero"
             label="Cash inflow"
             value={formatMYR(d.totalIncome)}
-            hint={`Salary + OT + extras + side (${monthLabel})`}
             icon={<Wallet size={18} strokeWidth={1.75} />}
-            trend={{ label: `${burnPct}% of inflow allocated to spend`, positive: burnPct < 85 }}
           />
           <StatCard
             variant="hero"
             label="Budget outflow"
             value={formatMYR(d.totalExpenses)}
-            hint="Sum of category actuals"
             icon={<Receipt size={18} strokeWidth={1.75} />}
           />
           <StatCard
             variant="hero"
             label="Net headroom"
             value={formatMYR(d.remainingBalance)}
-            hint="Inflow − budget actuals (prototype)"
             icon={
               d.remainingBalance >= 0 ? (
                 <ArrowUpRight size={18} strokeWidth={1.75} />
@@ -90,17 +123,11 @@ export function DashboardPage() {
                 <ArrowDownRight size={18} strokeWidth={1.75} />
               )
             }
-            trend={{
-              label:
-                d.remainingBalance >= 0 ? 'Above spend line' : 'Below line',
-              positive: d.remainingBalance >= 0,
-            }}
           />
           <StatCard
             variant="hero"
             label="Savings ticket"
             value={formatMYR(d.savingsAllocation)}
-            hint="ASB / forced savings line item"
             icon={<PiggyBank size={18} strokeWidth={1.75} />}
           />
         </div>
@@ -108,97 +135,171 @@ export function DashboardPage() {
           <StatCard
             label="Bills open"
             value={String(d.upcomingBillsCount)}
-            hint="Unpaid or upcoming this cycle"
             icon={<Timer size={18} strokeWidth={1.75} />}
           />
           <StatCard
-            label="Trips & events ahead"
-            value={String(d.upcomingEventsCount)}
-            hint={`From ${formatDate(ref)} forward`}
-            icon={<Calendar size={18} strokeWidth={1.75} />}
+            label="BNPL unpaid"
+            value={formatMYR2(installments.summary.totalUnpaid)}
+            icon={<CreditCard size={18} strokeWidth={1.75} />}
           />
           <StatCard
-            label="OT (cash)"
-            value={formatMYR(d.otEarnedThisMonth)}
-            hint="Logged sessions × rate"
-            icon={<Zap size={18} strokeWidth={1.75} />}
+            label="Events ahead"
+            value={String(d.upcomingEventsCount)}
+            icon={<Calendar size={18} strokeWidth={1.75} />}
           />
           <StatCard
             label="Side income"
             value={formatMYR(d.sideIncomeThisMonth)}
-            hint="Resale + affiliate"
-            icon={<ArrowUpRight size={18} strokeWidth={1.75} />}
+            icon={<TrendingUp size={18} strokeWidth={1.75} />}
+          />
+        </div>
+        <div className="dash-ot-strip">
+          <StatCard
+            label="OT (cash)"
+            value={formatMYR(d.otEarnedThisMonth)}
+            icon={<Zap size={18} strokeWidth={1.75} />}
           />
         </div>
       </PageSection>
 
-      <PageSection
-        kicker="Analytics"
-        title="Composition & flow"
-        description="Category mix, inflow vs tracked spend, plan adherence, and bill hygiene."
-      >
+      <PageSection title="Composition & flow">
         <div className="bajet-chart-grid">
-          <ChartShell
-            kicker="Distribution"
-            title="Spend by category"
-            subtitle={`Share of ${monthLabel} actuals across your envelope.`}
-            minHeight={300}
-          >
+          <ChartShell title="Spend by category" minHeight={300}>
             <ExpenseDonut data={expenseByCategory} />
           </ChartShell>
-          <ChartShell
-            kicker="Flow"
-            title="Inflow vs spend"
-            subtitle="Single-month comparison — not cashflow timing."
-            minHeight={268}
-          >
+          <ChartShell title="Inflow vs spend" minHeight={268}>
             <IncomeExpenseBar data={incomeVsExpense} />
           </ChartShell>
-          <ChartShell
-            kicker="Discipline"
-            title="Plan vs actual"
-            subtitle="Short labels on axis; full names in tooltips."
-            minHeight={340}
-          >
+          <ChartShell title="Plan vs actual" minHeight={340}>
             <PlannedActualBars data={budgetAllocationOverview} />
           </ChartShell>
-          <ChartShell
-            kicker="Obligations"
-            title="Bill status mix"
-            subtitle="Count of line items by payment state."
-            minHeight={268}
-          >
+          <ChartShell title="Bill status mix" minHeight={268}>
             <BillStatusBar data={billDueStatus} />
           </ChartShell>
         </div>
       </PageSection>
 
-      <section className="bajet-panel dash-upcoming">
-        <header className="dash-upcoming__head">
-          <p className="dash-upcoming__kicker">Calendar</p>
-          <h2 className="dash-upcoming__title">Up next</h2>
-          <p className="dash-upcoming__desc">
-            Closest trips and events on your radar.
-          </p>
-        </header>
-        <ul className="dash-upcoming__list">
-          {upcoming.map((e) => (
-            <li key={e.id} className="dash-upcoming__row">
-              <div>
-                <span className="dash-upcoming__name">{e.name}</span>
-                <span className="dash-upcoming__meta">
-                  {formatDate(e.eventDate)}
-                </span>
-              </div>
-              <span className="dash-upcoming__amt">
-                {formatMYR(e.plannedBudget)} budget
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <PageSection
+        title="Up next on the calendar"
+        aside={
+          <NavLink to="/events" className="dash-link-all">
+            View all
+            <ChevronRight size={16} strokeWidth={2} aria-hidden />
+          </NavLink>
+        }
+      >
+        <div className="bajet-panel dash-upcoming">
+          {upcoming.length === 0 ? (
+            <p className="dash-upcoming__empty">No upcoming events.</p>
+          ) : (
+            <ul className="dash-upcoming__list">
+              {upcoming.map((e) => (
+                <li key={e.id} className="dash-upcoming__row">
+                  <div>
+                    <span className="dash-upcoming__name">{e.name}</span>
+                    <span className="dash-upcoming__meta">
+                      {formatDate(e.eventDate)}
+                    </span>
+                  </div>
+                  <span className="dash-upcoming__amt">
+                    {formatMYR(e.plannedBudget)} budget
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </PageSection>
 
       <style>{`
+        .dash-nav {
+          display: grid;
+          gap: 0.85rem;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        @media (max-width: 960px) {
+          .dash-nav {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+        @media (max-width: 520px) {
+          .dash-nav {
+            grid-template-columns: 1fr;
+          }
+        }
+        .dash-nav-card {
+          display: flex;
+          align-items: center;
+          gap: 0.85rem;
+          padding: 1rem 1.1rem;
+          border-radius: var(--radius);
+          border: 1px solid var(--border-subtle);
+          background: var(--surface);
+          text-decoration: none;
+          color: inherit;
+          box-shadow: var(--shadow-card);
+          transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease,
+            transform 0.12s ease;
+        }
+        .dash-nav-card:hover {
+          border-color: var(--accent);
+          box-shadow: var(--shadow-float);
+        }
+        .dash-nav-card.is-active {
+          border-color: var(--accent);
+          background: linear-gradient(
+            165deg,
+            #ffffff 0%,
+            #f8fafc 100%
+          );
+        }
+        .dash-nav-card__icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.45rem;
+          height: 2.45rem;
+          border-radius: var(--radius-sm);
+          background: rgba(79, 70, 229, 0.09);
+          color: var(--accent);
+        }
+        .dash-nav-card__body {
+          flex: 1;
+          min-width: 0;
+        }
+        .dash-nav-card__title {
+          display: block;
+          font-size: 0.9375rem;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: var(--text);
+        }
+        .dash-nav-card__go {
+          flex-shrink: 0;
+          margin-top: 0.12rem;
+          color: var(--text-subtle);
+          opacity: 0.65;
+        }
+        .dash-nav-card:hover .dash-nav-card__go {
+          color: var(--accent);
+          opacity: 1;
+        }
+        .dash-link-all {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.2rem;
+          font-size: 0.8125rem;
+          font-weight: 600;
+          color: var(--accent);
+          text-decoration: none;
+          white-space: nowrap;
+        }
+        .dash-link-all:hover {
+          text-decoration: underline;
+        }
         .dash-grid-secondary {
           display: grid;
           gap: var(--space-4);
@@ -214,32 +315,26 @@ export function DashboardPage() {
             grid-template-columns: 1fr;
           }
         }
+        .dash-ot-strip {
+          margin-top: var(--space-4);
+          max-width: 22rem;
+        }
         .dash-upcoming {
-          padding: 1.25rem 1.35rem 1.15rem;
+          padding: 1.1rem 1.2rem 1rem;
         }
-        .dash-upcoming__head {
-          margin-bottom: 0.5rem;
-        }
-        .dash-upcoming__kicker {
-          margin: 0 0 0.25rem;
-          font-size: 0.6875rem;
-          font-weight: 600;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: var(--accent);
-        }
-        .dash-upcoming__title {
+        .dash-upcoming__empty {
           margin: 0;
-          font-size: 1.0625rem;
-          font-weight: 700;
-          letter-spacing: -0.02em;
-        }
-        .dash-upcoming__desc {
-          margin: 0.35rem 0 0;
           font-size: 0.875rem;
           color: var(--text-muted);
-          max-width: 36rem;
-          line-height: 1.45;
+          line-height: 1.5;
+        }
+        .dash-upcoming__empty a {
+          color: var(--accent);
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .dash-upcoming__empty a:hover {
+          text-decoration: underline;
         }
         .dash-upcoming__list {
           list-style: none;
@@ -273,6 +368,29 @@ export function DashboardPage() {
           font-weight: 600;
           color: var(--accent);
           white-space: nowrap;
+        }
+        @media (max-width: 640px) {
+          .dash-grid-secondary {
+            gap: 0.75rem;
+          }
+          .dash-ot-strip {
+            max-width: none;
+          }
+          .dash-upcoming {
+            padding: 0.85rem 0.95rem 0.8rem;
+            border-radius: var(--radius-sm);
+          }
+          .dash-upcoming__row {
+            padding: 0.62rem 0;
+            gap: 0.65rem;
+            align-items: flex-start;
+          }
+          .dash-upcoming__name {
+            font-size: 0.82rem;
+          }
+          .dash-upcoming__amt {
+            font-size: 0.75rem;
+          }
         }
       `}</style>
     </AppShell>

@@ -3,13 +3,12 @@ import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
 
 type AppShellProps = {
-  kicker?: string;
   title: string;
   subtitle?: string;
   children: ReactNode;
 };
 
-export function AppShell({ kicker, title, subtitle, children }: AppShellProps) {
+export function AppShell({ title, subtitle, children }: AppShellProps) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -23,7 +22,6 @@ export function AppShell({ kicker, title, subtitle, children }: AppShellProps) {
       />
       <div className="app-shell__main">
         <Topbar
-          kicker={kicker}
           title={title}
           subtitle={subtitle}
           onMenuClick={() => setMobileOpen(true)}
@@ -60,6 +58,33 @@ export function AppShell({ kicker, title, subtitle, children }: AppShellProps) {
           }
           .app-shell__content {
             max-width: none;
+          }
+        }
+        @media (min-width: 901px) {
+          .app-shell__main {
+            max-width: none;
+          }
+          .app-shell__content {
+            max-width: min(
+              1680px,
+              calc(100vw - var(--sidebar-w) - clamp(2.25rem, 5vw, 4rem))
+            );
+          }
+          .app-shell.sidebar-collapsed .app-shell__content {
+            max-width: min(
+              1680px,
+              calc(
+                100vw - var(--sidebar-w-collapsed) - clamp(2.25rem, 5vw, 4rem)
+              )
+            );
+          }
+        }
+        @media (max-width: 640px) {
+          .app-shell__main {
+            padding: 0.65rem 0.75rem 1.15rem;
+          }
+          .app-shell__content {
+            gap: 1rem;
           }
         }
       `}</style>

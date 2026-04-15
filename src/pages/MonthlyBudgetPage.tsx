@@ -39,53 +39,20 @@ export function MonthlyBudgetPage() {
   }));
 
   return (
-    <AppShell
-      kicker="Envelopes"
-      title="Monthly budget"
-      subtitle="Edit categories, chart labels, and amounts — stored in this browser."
-    >
-      <PageSection
-        kicker="Summary"
-        title="Envelope roll-up"
-        description="Planned ceiling versus spend to date. Variance is planned minus actual (positive means room left)."
-      >
-      <div className="budget-summary bajet-stat-grid">
-        <StatCard
-          label="Total planned"
-          value={formatMYR(planned)}
-          hint="All categories"
-        />
-        <StatCard
-          label="Total actual"
-          value={formatMYR(actual)}
-          hint="Spend to date"
-        />
-        <StatCard
-          label="Variance"
-          value={formatMYR(Math.abs(variance))}
-          hint={variance >= 0 ? 'Under plan (good)' : 'Over plan'}
-          trend={{
-            label: variance >= 0 ? 'Under budget' : 'Over budget',
-            positive: variance >= 0,
-          }}
-        />
-      </div>
+    <AppShell title="Monthly Budget">
+      <PageSection>
+        <div className="budget-summary bajet-stat-grid">
+          <StatCard label="Total planned" value={formatMYR(planned)} />
+          <StatCard label="Total actual" value={formatMYR(actual)} />
+          <StatCard label="Variance" value={formatMYR(Math.abs(variance))} />
+        </div>
       </PageSection>
 
-      <ChartShell
-        kicker="Visual"
-        title="Planned vs actual"
-        subtitle="Teal = actual, indigo = plan. Hover for full category names."
-        minHeight={360}
-      >
+      <ChartShell title="Planned vs actual" minHeight={360}>
         <PlannedActualBars data={chartData} />
       </ChartShell>
 
-      <PageSection
-        kicker="Structure"
-        title="Edit categories"
-        description="Add or remove envelope lines. Chart label is optional (falls back to name)."
-      >
+      <PageSection title="Edit categories">
         <div className="budget-edit-actions">
           <button
             type="button"
@@ -155,6 +122,7 @@ export function MonthlyBudgetPage() {
       </div>
 
       <div className="budget-table-wrap bajet-panel">
+        <div className="budget-table-scroll bajet-table-scroll">
         <table className="budget-table">
           <thead>
             <tr>
@@ -265,6 +233,7 @@ export function MonthlyBudgetPage() {
             })}
           </tbody>
         </table>
+        </div>
       </div>
       </PageSection>
 
@@ -349,7 +318,10 @@ export function MonthlyBudgetPage() {
           max-width: 100%;
         }
         .budget-table-wrap {
-          overflow-x: auto;
+          padding: 0;
+        }
+        .budget-table-scroll {
+          padding: 1rem 1.15rem 1.05rem;
         }
         .budget-table {
           font-size: 0.875rem;
@@ -378,6 +350,39 @@ export function MonthlyBudgetPage() {
           color: var(--negative);
           font-weight: 600;
           font-family: var(--font-mono);
+        }
+        @media (max-width: 640px) {
+          .budget-edit-actions {
+            margin-bottom: 0.75rem;
+          }
+          .budget-cards {
+            gap: 0.75rem;
+          }
+          .budget-card {
+            padding: 0.88rem 0.95rem;
+            border-radius: var(--radius-sm);
+          }
+          .budget-card__name {
+            font-size: 0.82rem;
+          }
+          .budget-card__nums {
+            gap: 0.4rem;
+            font-size: 0.72rem;
+          }
+          .budget-card__val {
+            font-size: 0.78rem;
+          }
+          .budget-table th,
+          .budget-table td {
+            padding: 0.55rem 0.65rem;
+            font-size: 0.8rem;
+          }
+          .budget-table th {
+            font-size: 0.62rem;
+          }
+          .budget-table-scroll {
+            padding: 0.75rem 0.85rem 0.8rem;
+          }
         }
       `}</style>
     </AppShell>

@@ -25,53 +25,20 @@ export function SideIncomePage() {
   const chartData = [{ name: monthLabel, income, expense }];
 
   return (
-    <AppShell
-      kicker="Side projects"
-      title="Side income & margin"
-      subtitle="Full ledger — assign each row to a month (YYYY-MM) to roll into charts."
-    >
-      <PageSection
-        kicker="Totals"
-        title={`${monthLabel} performance`}
-        description="Gross side inflow, direct costs, and net for the selected header month."
-      >
+    <AppShell title="Side Income">
+      <PageSection title={`${monthLabel} performance`}>
       <div className="side-cards">
-        <StatCard
-          label="Side income"
-          value={formatMYR(income)}
-          hint={monthLabel}
-        />
-        <StatCard
-          label="Side expenses"
-          value={formatMYR(expense)}
-          hint="Ops + ads + infra"
-        />
-        <StatCard
-          label="Net"
-          value={formatMYR(net)}
-          hint="Income − expense"
-          trend={{
-            label: net >= 0 ? 'Positive' : 'Negative',
-            positive: net >= 0,
-          }}
-        />
+        <StatCard label="Side income" value={formatMYR(income)} />
+        <StatCard label="Side expenses" value={formatMYR(expense)} />
+        <StatCard label="Net" value={formatMYR(net)} />
       </div>
       </PageSection>
 
-      <ChartShell
-        kicker="Visual"
-        title="Income vs expense"
-        subtitle={`${monthLabel} — grouped bars.`}
-        minHeight={260}
-      >
+      <ChartShell title="Income vs expense" minHeight={260}>
         <SideIncomeBar data={chartData} />
       </ChartShell>
 
-      <PageSection
-        kicker="Ledger"
-        title="All side transactions"
-        description="Filter by changing the month in the header, or edit the month field on each row."
-      >
+      <PageSection title="All side transactions">
         <div className="side-edit-bar">
           <button
             type="button"
@@ -99,6 +66,7 @@ export function SideIncomePage() {
         {state.sideIncome.length === 0 ? (
           <p className="side-empty">No side transactions — add a row.</p>
         ) : (
+          <div className="bajet-table-scroll">
           <table className="side-table">
             <thead>
               <tr>
@@ -204,6 +172,7 @@ export function SideIncomePage() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
         <p className="side-filter-note">
           Rows matching <strong>{month}</strong> in the table feed the stats and
@@ -246,7 +215,6 @@ export function SideIncomePage() {
         .side-table {
           width: 100%;
           font-size: 0.875rem;
-          min-width: 640px;
         }
         .side-table th,
         .side-table td {
@@ -274,6 +242,33 @@ export function SideIncomePage() {
           margin: 1rem 0 0;
           font-size: 0.8125rem;
           color: var(--text-muted);
+        }
+        @media (max-width: 640px) {
+          .side-cards {
+            gap: 0.75rem;
+          }
+          .side-table-wrap {
+            padding: 0.85rem 0.9rem;
+          }
+          .side-h2 {
+            font-size: 0.875rem;
+            margin-bottom: 0.6rem;
+          }
+          .side-table {
+            font-size: 0.8rem;
+          }
+          .side-table th,
+          .side-table td {
+            padding: 0.5rem 0.4rem;
+          }
+          .side-table th {
+            font-size: 0.62rem;
+          }
+          .side-filter-note {
+            font-size: 0.76rem;
+            margin-top: 0.75rem;
+            line-height: 1.45;
+          }
         }
       `}</style>
     </AppShell>

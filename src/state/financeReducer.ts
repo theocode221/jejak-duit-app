@@ -1,4 +1,8 @@
 import type { AppFinanceState, FinanceAction } from './appFinanceTypes';
+import { newId } from '@/utils/id';
+import { breakdownTotal, tripEventWithActualFromBreakdown } from '@/utils/eventHelpers';
+import { basicHourlyFromMonthlySalary } from '@/utils/otPay';
+import { kwspFromBasic } from '@/utils/salaryPeriodUtils';
 
 export function financeReducer(
   state: AppFinanceState,
@@ -103,13 +107,15 @@ export function financeReducer(
     case 'income/setSalary': {
       const cur = state.monthData[action.monthKey];
       if (!cur) return state;
+      const salary = Math.max(0, action.salary);
       return {
         ...state,
         monthData: {
           ...state.monthData,
           [action.monthKey]: {
             ...cur,
-            monthlySalary: action.salary,
+            monthlySalary: salary,
+            otHourlyBasic: basicHourlyFromMonthlySalary(salary),
           },
         },
       };
@@ -190,6 +196,88 @@ export function financeReducer(
       };
     }
 
+    case 'salary/period/add': {
+      const dep = action.period.depositDate.slice(0, 10);
+      if (
+        state.salaryPeriods.some((p) => p.depositDate.slice(0, 10) === dep)
+      ) {
+        return state;
+      }
+      return {
+        ...state,
+        salaryPeriods: [
+          ...state.salaryPeriods,
+          { ...action.period, depositDate: dep },
+        ],
+      };
+    }
+
+    case 'salary/period/patch': {
+      return {
+        ...state,
+        salaryPeriods: state.salaryPeriods.map((p) => {
+          if (p.id !== action.id) return p;
+          const er = action.patch.earnings;
+          const dd = action.patch.deductions;
+          const nextEarnings = er ? { ...p.earnings, ...er } : p.earnings;
+          let nextDeductions = dd
+            ? { ...p.deductions, ...dd }
+            : p.deductions;
+          if (
+            er &&
+            typeof er.basic === 'number' &&
+            (dd === undefined || dd.kwsp === undefined)
+          ) {
+            nextDeductions = {
+              ...nextDeductions,
+              kwsp: kwspFromBasic(nextEarnings.basic),
+            };
+          }
+          return {
+            ...p,
+            ...(action.patch.label !== undefined
+              ? { label: action.patch.label }
+              : {}),
+            ...(action.patch.depositDate !== undefined
+              ? { depositDate: action.patch.depositDate.slice(0, 10) }
+              : {}),
+            earnings: nextEarnings,
+            deductions: nextDeductions,
+          };
+        }),
+      };
+    }
+
+    case 'salary/period/finalize': {
+      return {
+        ...state,
+        salaryPeriods: state.salaryPeriods.map((p) =>
+          p.id === action.id ? { ...p, status: 'finalized' as const } : p
+        ),
+      };
+    }
+
+    case 'salary/period/duplicateToNextDeposit': {
+      const src = state.salaryPeriods.find((p) => p.id === action.fromId);
+      if (!src) return state;
+      const nextDep = action.nextDepositDate.slice(0, 10);
+      if (state.salaryPeriods.some((p) => p.depositDate === nextDep)) {
+        return state;
+      }
+      const copy: (typeof state)['salaryPeriods'][number] = {
+        id: newId('salary'),
+        label: action.nextLabel,
+        depositDate: nextDep,
+        status: 'forecast',
+        earnings: { ...src.earnings },
+        deductions: { ...src.deductions },
+      };
+      return {
+        ...state,
+        salaryPeriods: [...state.salaryPeriods, copy],
+      };
+    }
+
     case 'bills/update': {
       const list = state.billsByMonth[action.monthKey] ?? [];
       return {
@@ -226,24 +314,36 @@ export function financeReducer(
     case 'events/update':
       return {
         ...state,
-        events: state.events.map((e) =>
-          e.id === action.id ? { ...e, ...action.patch } : e
-        ),
+        events: state.events.map((e) => {
+          if (e.id !== action.id) return e;
+          const next = { ...e, ...action.patch };
+          if (action.patch.breakdown !== undefined) {
+            return {
+              ...next,
+              actualSpending: breakdownTotal(next.breakdown),
+            };
+          }
+          return next;
+        }),
       };
     case 'events/breakdown/set':
       return {
         ...state,
-        events: state.events.map((e) =>
-          e.id === action.id
-            ? {
-                ...e,
-                breakdown: { ...e.breakdown, [action.key]: action.value },
-              }
-            : e
-        ),
+        events: state.events.map((e) => {
+          if (e.id !== action.id) return e;
+          const breakdown = { ...e.breakdown, [action.key]: action.value };
+          return {
+            ...e,
+            breakdown,
+            actualSpending: breakdownTotal(breakdown),
+          };
+        }),
       };
     case 'events/add':
-      return { ...state, events: [...state.events, action.event] };
+      return {
+        ...state,
+        events: [...state.events, tripEventWithActualFromBreakdown(action.event)],
+      };
     case 'events/remove':
       return {
         ...state,

@@ -31,7 +31,7 @@ export function toBillDueStatusChart(bills: Bill[]): BillDueStatus[] {
   for (const b of bills) {
     map.set(b.status, (map.get(b.status) ?? 0) + 1);
   }
-  return (['paid', 'unpaid', 'upcoming'] as const).map((status) => ({
+  return (['paid', 'unpaid'] as const).map((status) => ({
     status,
     count: map.get(status) ?? 0,
   }));

@@ -1,4 +1,9 @@
-export type BillStatus = 'paid' | 'unpaid' | 'upcoming';
+import type { PaymentMethod } from './installments';
+
+export type BillStatus = 'paid' | 'unpaid';
+
+/** How a bill row gets its amount. BNPL methods use unpaid totals from the Installments page for the workbook month. */
+export type BillAmountSource = 'manual' | PaymentMethod;
 
 export type BudgetStatus = 'under' | 'over' | 'on_track';
 
@@ -35,11 +40,15 @@ export interface OTEntry {
 export interface Bill {
   id: string;
   name: string;
+  /** Calendar day (1–31) each month; actual due date is clamped to month length. */
   dueDay: number;
+  /** Used when amountSource is manual (or unset). */
   amount: number;
   status: BillStatus;
   reminder: string;
   category: string;
+  /** Omit or manual: use amount. SPayLater / Atome / Credit card: unpaid installment total for that method. */
+  amountSource?: BillAmountSource;
 }
 
 /** Alias for API / docs */
@@ -51,7 +60,7 @@ export type EventBreakdownKey =
   | 'makan'
   | 'registration'
   | 'shopping'
-  | 'misc';
+  | 'others';
 
 export interface EventBreakdown {
   transport: number;
@@ -59,7 +68,7 @@ export interface EventBreakdown {
   makan: number;
   registration: number;
   shopping: number;
-  misc: number;
+  others: number;
 }
 
 export interface TripEvent {

@@ -16,6 +16,8 @@ import {
   extractExtraIncomeLines,
   bonusAllocationFromExport,
 } from '@/services/structuredFinance';
+import { basicHourlyFromMonthlySalary } from '@/utils/otPay';
+import { tripEventWithActualFromBreakdown } from '@/utils/eventHelpers';
 import type {
   AppFinanceState,
   ExtraIncomeLine,
@@ -58,13 +60,13 @@ function seedOtHourlyBasic(
   isRollup: boolean,
   rollupHours: number
 ): number {
+  if (metrics.basic > 0) {
+    return basicHourlyFromMonthlySalary(metrics.basic);
+  }
   if (isRollup && metrics.otCash > 0 && rollupHours > 0) {
     return (
       Math.round((metrics.otCash / (rollupHours * 1.5)) * 100) / 100
     );
-  }
-  if (metrics.basic > 0) {
-    return Math.round((metrics.basic / 173) * 100) / 100;
   }
   return (
     Math.max(0.01, Math.round((metrics.impliedRate / 1.5) * 100) / 100)
@@ -84,7 +86,7 @@ function buildOTSlice(monthKey: string): Pick<
     return {
       otEntries: [],
       monthlySalary: 0,
-      otHourlyBasic: 13.14,
+      otHourlyBasic: 0,
       bonusAllocation: {
         label: bonus.label,
         amount: bonus.amount,
@@ -142,13 +144,16 @@ export function createInitialAppFinanceState(): AppFinanceState {
     monthData[mk] = buildMonthFinanceDataFromRoot(mk);
     billsByMonth[mk] = buildBills(root, mk);
   }
-  const events = buildTripEvents(root).sort(
-    (a, b) =>
-      new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime()
-  );
+  const events = buildTripEvents(root)
+    .sort(
+      (a, b) =>
+        new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime()
+    )
+    .map(tripEventWithActualFromBreakdown);
   return {
     monthData,
     billsByMonth,
+    salaryPeriods: [],
     events,
     gear: normalizeGear(root.gearWishlist ?? []),
     sideIncome: normalizeSideIncome(root.sideIncome ?? []),

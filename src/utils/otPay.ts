@@ -1,5 +1,21 @@
 import type { OTDayType, OTEntry } from '@/types';
 
+/** Days per month for basic hourly (÷26÷8 rule). */
+export const BASIC_HOURLY_DAYS = 26;
+/** Hours per day for basic hourly. */
+export const BASIC_HOURLY_HOURS_PER_DAY = 8;
+
+/**
+ * Basic hourly pay from monthly salary: salary ÷ 26 ÷ 8.
+ * Regular OT cash uses ×1.5 on this base (see `computeOTPay`).
+ */
+export function basicHourlyFromMonthlySalary(monthlySalary: number): number {
+  const m = Math.max(0, monthlySalary);
+  if (m <= 0) return 0;
+  const denom = BASIC_HOURLY_DAYS * BASIC_HOURLY_HOURS_PER_DAY;
+  return Math.round((m / denom) * 100) / 100;
+}
+
 /** Regular day: hourly basic × 1.5 × hours. */
 /** Public holiday: first 8h at ×2.0, remainder at ×3.0 (on hourly basic). */
 export function computeOTPay(

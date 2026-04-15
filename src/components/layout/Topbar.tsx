@@ -3,13 +3,12 @@ import { useMonth } from '@/context/MonthContext';
 import { FinanceToolbar } from './FinanceToolbar';
 
 type TopbarProps = {
-  kicker?: string;
   title: string;
   subtitle?: string;
   onMenuClick: () => void;
 };
 
-export function Topbar({ kicker, title, subtitle, onMenuClick }: TopbarProps) {
+export function Topbar({ title, subtitle, onMenuClick }: TopbarProps) {
   const { month, monthLabel, setMonth, options } = useMonth();
 
   return (
@@ -24,7 +23,6 @@ export function Topbar({ kicker, title, subtitle, onMenuClick }: TopbarProps) {
           <Menu size={22} strokeWidth={1.75} />
         </button>
         <div className="app-topbar__titles">
-          {kicker && <p className="app-topbar__kicker">{kicker}</p>}
           <h1 className="app-topbar__title">{title}</h1>
           {subtitle && <p className="app-topbar__sub">{subtitle}</p>}
         </div>
@@ -55,17 +53,22 @@ export function Topbar({ kicker, title, subtitle, onMenuClick }: TopbarProps) {
           <Sparkles size={16} strokeWidth={1.75} />
           <span>{monthLabel}</span>
         </div>
-        <div className="app-topbar__avatar" aria-hidden>
-          MH
-        </div>
       </div>
+      <button
+        type="button"
+        className="app-topbar__user-icon"
+        aria-label="Account (MH)"
+      >
+        MH
+      </button>
       <style>{`
         .app-topbar {
+          position: relative;
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
           gap: 1rem;
-          padding: 0.15rem 0 0.25rem;
+          padding: 0.15rem 3rem 0.25rem 0;
           flex-wrap: wrap;
           border-bottom: 1px solid var(--border-subtle);
           margin-bottom: 0.25rem;
@@ -101,14 +104,6 @@ export function Topbar({ kicker, title, subtitle, onMenuClick }: TopbarProps) {
           .app-topbar__menu {
             display: flex;
           }
-        }
-        .app-topbar__kicker {
-          margin: 0 0 0.2rem;
-          font-size: 0.6875rem;
-          font-weight: 600;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--accent);
         }
         .app-topbar__title {
           margin: 0;
@@ -179,19 +174,73 @@ export function Topbar({ kicker, title, subtitle, onMenuClick }: TopbarProps) {
             display: none;
           }
         }
-        .app-topbar__avatar {
+        .app-topbar__user-icon {
+          position: absolute;
+          top: 0;
+          right: 0;
           width: 40px;
           height: 40px;
-          border-radius: var(--radius-sm);
+          margin: 0;
+          padding: 0;
+          border-radius: 9999px;
           background: linear-gradient(145deg, #ccfbf1, #e0e7ff);
           border: 1px solid var(--border-subtle);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 0.72rem;
+          font-family: inherit;
+          font-size: 0.7rem;
           font-weight: 700;
+          letter-spacing: -0.02em;
           color: var(--accent-hover);
           box-shadow: var(--shadow-sm);
+          cursor: default;
+          flex-shrink: 0;
+        }
+        .app-topbar__user-icon:hover {
+          border-color: #cbd5e1;
+          box-shadow: var(--shadow-sm), 0 0 0 1px rgba(99, 102, 241, 0.12);
+        }
+        .app-topbar__user-icon:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        @media (max-width: 640px) {
+          .app-topbar {
+            gap: 0.65rem;
+            padding-bottom: 0.85rem;
+            margin-bottom: 0.15rem;
+          }
+          .app-topbar__left {
+            gap: 0.65rem;
+          }
+          .app-topbar__title {
+            font-size: clamp(1.12rem, 4.5vw, 1.38rem);
+            letter-spacing: -0.03em;
+          }
+          .app-topbar__sub {
+            font-size: 0.8rem;
+            margin-top: 0.28rem;
+            line-height: 1.45;
+            max-width: 100%;
+          }
+          .app-topbar__right {
+            gap: 0.45rem;
+            width: 100%;
+            justify-content: flex-start;
+          }
+          .app-topbar__select {
+            font-size: 0.75rem;
+            padding: 0.42rem 1.85rem 0.42rem 0.8rem;
+          }
+          .app-topbar {
+            padding-right: 2.65rem;
+          }
+          .app-topbar__user-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 0.65rem;
+          }
         }
       `}</style>
     </header>

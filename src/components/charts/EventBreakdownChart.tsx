@@ -23,7 +23,7 @@ const keys: { key: keyof EventBreakdown; label: string }[] = [
   { key: 'makan', label: 'Makan' },
   { key: 'registration', label: 'Registration' },
   { key: 'shopping', label: 'Shopping' },
-  { key: 'misc', label: 'Misc' },
+  { key: 'others', label: 'Others' },
 ];
 
 export function EventBreakdownChart({ breakdown }: { breakdown: EventBreakdown }) {

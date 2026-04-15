@@ -19,11 +19,43 @@ export interface BonusAllocationState {
   allocatedTo: string;
 }
 
+/** Earnings line items for a salary deposit period (payroll). */
+export interface SalaryEarningsBreakdown {
+  basic: number;
+  ot: number;
+  ioeAllowance: number;
+  medicalClaim: number;
+  miscClaim: number;
+  petrolClaim: number;
+}
+
+/** Statutory / payroll deductions for a salary period. */
+export interface SalaryDeductionsBreakdown {
+  kwsp: number;
+  ies: number;
+  socso: number;
+  hostel: number;
+  lateIn: number;
+}
+
+/**
+ * One salary cycle tied to a deposit date (e.g. 25th).
+ * Totals are derived from earnings/deductions when persisting or displaying.
+ */
+export interface SalaryPeriodState {
+  id: string;
+  label: string;
+  depositDate: string;
+  status: 'forecast' | 'finalized';
+  earnings: SalaryEarningsBreakdown;
+  deductions: SalaryDeductionsBreakdown;
+}
+
 /** All finance fields scoped to a workbook month (selector month key). */
 export interface MonthFinanceData {
   budgetCategories: BudgetCategory[];
   otEntries: OTEntry[];
-  /** Hourly basic pay — OT uses ×1.5 (regular) or ×2/×3 tiers (public holiday). */
+  /** Basic hourly (monthly ÷ 26 ÷ 8). OT cash: regular ×1.5× this; public ×2/×3 on this base. */
   otHourlyBasic: number;
   monthlySalary: number;
   extraIncomeLines: ExtraIncomeLine[];
@@ -34,6 +66,8 @@ export interface AppFinanceState {
   monthData: Record<string, MonthFinanceData>;
   /** Bills can differ per month (amounts tied to sheet lines in seed). */
   billsByMonth: Record<string, Bill[]>;
+  /** Salary / payroll periods (forecast vs finalized), keyed by deposit date in UI. */
+  salaryPeriods: SalaryPeriodState[];
   events: TripEvent[];
   gear: GearItem[];
   sideIncome: SideIncomeTransaction[];
@@ -53,6 +87,24 @@ export type FinanceAction =
   | { type: 'income/extra/add'; monthKey: string; line: ExtraIncomeLine }
   | { type: 'income/extra/remove'; monthKey: string; id: string }
   | { type: 'income/bonus/set'; monthKey: string; bonus: BonusAllocationState }
+  | { type: 'salary/period/add'; period: SalaryPeriodState }
+  | {
+      type: 'salary/period/patch';
+      id: string;
+      patch: {
+        label?: string;
+        depositDate?: string;
+        earnings?: Partial<SalaryEarningsBreakdown>;
+        deductions?: Partial<SalaryDeductionsBreakdown>;
+      };
+    }
+  | { type: 'salary/period/finalize'; id: string }
+  | {
+      type: 'salary/period/duplicateToNextDeposit';
+      fromId: string;
+      nextDepositDate: string;
+      nextLabel: string;
+    }
   | { type: 'bills/update'; monthKey: string; id: string; patch: Partial<Bill> }
   | { type: 'bills/add'; monthKey: string; bill: Bill }
   | { type: 'bills/remove'; monthKey: string; id: string }

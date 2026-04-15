@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 
 type ChartShellProps = {
-  kicker?: string;
   title: string;
   subtitle?: string;
   action?: ReactNode;
@@ -10,7 +9,6 @@ type ChartShellProps = {
 };
 
 export function ChartShell({
-  kicker,
   title,
   subtitle,
   action,
@@ -21,7 +19,6 @@ export function ChartShell({
     <div className="chart-shell">
       <div className="chart-shell__head">
         <div>
-          {kicker && <p className="chart-shell__kicker">{kicker}</p>}
           <h3 className="chart-shell__title">{title}</h3>
           {subtitle && <p className="chart-shell__sub">{subtitle}</p>}
         </div>
@@ -47,14 +44,6 @@ export function ChartShell({
           justify-content: space-between;
           gap: 1rem;
           margin-bottom: 0.85rem;
-        }
-        .chart-shell__kicker {
-          margin: 0 0 0.2rem;
-          font-size: 0.6875rem;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: var(--accent);
         }
         .chart-shell__title {
           margin: 0;
@@ -82,9 +71,24 @@ export function ChartShell({
           border: 1px solid var(--border-subtle);
         }
         @media (max-width: 640px) {
+          .chart-shell {
+            padding: 0.85rem 0.95rem 0.8rem;
+            border-radius: var(--radius-sm);
+          }
+          .chart-shell__head {
+            margin-bottom: 0.65rem;
+            gap: 0.65rem;
+          }
+          .chart-shell__title {
+            font-size: 0.9375rem;
+          }
+          .chart-shell__sub {
+            font-size: 0.75rem;
+            line-height: 1.42;
+          }
           .chart-shell__body {
-            height: 248px !important;
-            min-height: 248px !important;
+            height: clamp(220px, 42vh, 288px) !important;
+            min-height: clamp(220px, 42vh, 288px) !important;
           }
         }
       `}</style>

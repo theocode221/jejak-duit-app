@@ -5,20 +5,20 @@ import {
   Banknote,
   CalendarClock,
   Plane,
-  ShoppingBag,
   TrendingUp,
+  CreditCard,
   PanelLeftClose,
   PanelLeft,
 } from 'lucide-react';
 
 const links = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { to: '/budget', label: 'Monthly budget', icon: Wallet },
-  { to: '/income', label: 'Income & OT', icon: Banknote },
+  { to: '/budget', label: 'Monthly Budget', icon: Wallet },
+  { to: '/income', label: 'Salary & OT', icon: Banknote },
   { to: '/bills', label: 'Bills', icon: CalendarClock },
-  { to: '/events', label: 'Events / trips', icon: Plane },
-  { to: '/gear', label: 'Gear wishlist', icon: ShoppingBag },
-  { to: '/side-income', label: 'Side income', icon: TrendingUp },
+  { to: '/events', label: 'Events', icon: Plane },
+  { to: '/side-income', label: 'Side Income', icon: TrendingUp },
+  { to: '/installments', label: 'Installment', icon: CreditCard },
 ];
 
 type SidebarProps = {
@@ -213,6 +213,19 @@ export function Sidebar({
             backdrop-filter: blur(4px);
             border: none;
             cursor: pointer;
+          }
+        }
+        @media (max-width: 640px) {
+          .app-sidebar {
+            padding: 0.85rem 0.55rem;
+          }
+          .app-sidebar__link {
+            padding: 0.52rem 0.65rem;
+            font-size: 0.8125rem;
+            gap: 0.6rem;
+          }
+          .app-sidebar__brand {
+            padding-bottom: 1.05rem;
           }
         }
       `}</style>

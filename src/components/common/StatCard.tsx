@@ -5,6 +5,8 @@ type StatVariant = 'default' | 'hero';
 type StatCardProps = {
   label: string;
   value: string;
+  /** Short prominent line under the label (e.g. bill name) — shown before the main value. */
+  lead?: string;
   hint?: string;
   icon?: ReactNode;
   trend?: { label: string; positive?: boolean };
@@ -14,6 +16,7 @@ type StatCardProps = {
 export function StatCard({
   label,
   value,
+  lead,
   hint,
   icon,
   trend,
@@ -27,6 +30,7 @@ export function StatCard({
         <span className="stat-card__label">{label}</span>
         {icon && <span className="stat-card__icon">{icon}</span>}
       </div>
+      {lead && <p className="stat-card__lead">{lead}</p>}
       <p className="stat-card__value">{value}</p>
       {hint && <p className="stat-card__hint">{hint}</p>}
       {trend && (
@@ -50,7 +54,7 @@ export function StatCard({
           overflow: hidden;
         }
         .stat-card--hero {
-          min-height: 124px;
+          min-height: 132px;
           padding: 1.35rem 1.4rem;
           background: linear-gradient(
             165deg,
@@ -89,13 +93,35 @@ export function StatCard({
           letter-spacing: 0.04em;
           text-transform: uppercase;
         }
+        .stat-card__lead {
+          margin: 0.4rem 0 0;
+          font-size: 1rem;
+          font-weight: 700;
+          color: var(--text);
+          line-height: 1.25;
+          letter-spacing: -0.02em;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .stat-card--hero .stat-card__lead {
+          margin-top: 0.5rem;
+          font-size: 1.08rem;
+        }
         .stat-card__icon {
           display: flex;
           color: var(--accent);
           opacity: 0.88;
         }
+        .stat-card__top + .stat-card__value {
+          margin-top: 0.45rem;
+        }
+        .stat-card__lead + .stat-card__value {
+          margin-top: 0.35rem;
+        }
         .stat-card__value {
-          margin: 0.45rem 0 0;
+          margin: 0;
           font-size: 1.45rem;
           font-weight: 700;
           letter-spacing: -0.03em;
@@ -123,6 +149,48 @@ export function StatCard({
         }
         .stat-card__trend.is-neg {
           color: var(--negative);
+        }
+        @media (max-width: 640px) {
+          .stat-card {
+            padding: 0.95rem 1rem;
+            min-height: 100px;
+            border-radius: var(--radius-sm);
+          }
+          .stat-card--hero {
+            padding: 1rem 1.05rem;
+            min-height: 116px;
+          }
+          .stat-card__lead {
+            font-size: 0.92rem;
+            margin-top: 0.32rem;
+          }
+          .stat-card--hero .stat-card__lead {
+            font-size: 0.98rem;
+          }
+          .stat-card__label {
+            font-size: 0.7rem;
+          }
+          .stat-card__top + .stat-card__value {
+            margin-top: 0.35rem;
+          }
+          .stat-card__lead + .stat-card__value {
+            margin-top: 0.28rem;
+          }
+          .stat-card__value {
+            font-size: 1.22rem;
+          }
+          .stat-card--hero .stat-card__value {
+            font-size: 1.32rem;
+          }
+          .stat-card__hint {
+            font-size: 0.76rem;
+            margin-top: 0.32rem;
+            line-height: 1.38;
+          }
+          .stat-card__trend {
+            margin-top: 0.45rem;
+            font-size: 0.7rem;
+          }
         }
       `}</style>
     </div>

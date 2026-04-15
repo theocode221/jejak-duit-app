@@ -11,6 +11,11 @@ export function breakdownTotal(b: TripEvent['breakdown']) {
     b.makan +
     b.registration +
     b.shopping +
-    b.misc
+    b.others
   );
+}
+
+/** Keep `actualSpending` aligned with the sum of category spending. */
+export function tripEventWithActualFromBreakdown(e: TripEvent): TripEvent {
+  return { ...e, actualSpending: breakdownTotal(e.breakdown) };
 }

@@ -285,7 +285,7 @@ function breakdownFromTwincity(
     makan: 0,
     registration: 0,
     shopping: 0,
-    misc: 0,
+    others: 0,
   };
   for (const r of rows) {
     const label = normalizeKey(r.item);
@@ -294,7 +294,7 @@ function breakdownFromTwincity(
     else if (label.includes('makan')) b.makan += amt;
     else if (label.includes('gambar') || label.includes('photo')) b.shopping += amt;
     else if (label === 'total') continue;
-    else b.misc += amt;
+    else b.others += amt;
   }
   return b;
 }
@@ -311,7 +311,7 @@ function defaultBreakdown(
     makan: Math.round(p * 0.2 * 100) / 100,
     registration: Math.round(p * 0.12 * 100) / 100,
     shopping: Math.round(p * 0.15 * 100) / 100,
-    misc: Math.max(0, spend - p * 0.67),
+    others: Math.max(0, spend - p * 0.67),
   };
 }
 
@@ -320,16 +320,16 @@ function medanEventFromExport(eb: StructuredEventBudget): TripEvent {
   let hotel = 0;
   let makan = 0;
   let shopping = 0;
-  let misc = 0;
+  let othersBucket = 0;
   for (const row of eb.perHeadItems) {
     const it = normalizeKey(row.item);
     const a = toNumber(row.amount);
     if (it.includes('flight')) transport += a;
     else if (it.includes('accom')) hotel += a;
     else if (it.includes('transport')) transport += a;
-    else if (it.includes('insur')) misc += a;
+    else if (it.includes('insur')) othersBucket += a;
     else if (it.includes('per head')) continue;
-    else misc += a;
+    else othersBucket += a;
   }
   const stayActual = eb.stayBreakdown.reduce((s, r) => s + toNumber(r.actual), 0);
   hotel += stayActual;
@@ -354,7 +354,7 @@ function medanEventFromExport(eb: StructuredEventBudget): TripEvent {
       makan,
       registration: 0,
       shopping,
-      misc: Math.round(misc * 100) / 100,
+      others: Math.round(othersBucket * 100) / 100,
     },
   };
 }
@@ -495,18 +495,25 @@ export function buildBills(
     const dueDay = parseDueDayHb(d.dueDate);
     const key = d.bill.toLowerCase();
     let amount = 0;
+    let amountSource: Bill['amountSource'] | undefined;
     if (key.includes('kereta')) amount = lines.get('kereta') ?? 427;
-    else if (key.includes('cc')) amount = lines.get('cc') ?? 225;
-    else if (key.includes('spay')) amount = lines.get('spay') ?? 217;
-    else if (key.includes('asb')) amount = lines.get('mara') ?? 100;
+    else if (key.includes('cc')) {
+      amount = lines.get('cc') ?? 225;
+      amountSource = 'credit_card';
+    } else if (key.includes('spay')) {
+      amount = lines.get('spay') ?? 217;
+      amountSource = 'spaylater';
+    } else if (key.includes('atome')) {
+      amount = lines.get('atome') ?? 0;
+      amountSource = 'atome';
+    } else if (key.includes('asb')) amount = lines.get('mara') ?? 100;
     else if (key.includes('xox')) amount = lines.get('xox') ?? 35;
     else amount = 50;
 
-    let status: BillStatus = 'upcoming';
+    let status: BillStatus = 'unpaid';
     if (dueDay < refDay) status = 'paid';
-    else if (dueDay <= refDay + 5) status = 'unpaid';
 
-    return {
+    const row: Bill = {
       id: `b-${i}`,
       name: titleCase(d.bill),
       dueDay,
@@ -515,6 +522,10 @@ export function buildBills(
       reminder: d.dueDate,
       category: 'Fixed',
     };
+    if (amountSource) {
+      row.amountSource = amountSource;
+    }
+    return row;
   });
 }
 
