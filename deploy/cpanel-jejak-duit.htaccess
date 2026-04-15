@@ -1,0 +1,10 @@
+# Use this when the app is served from https://yourdomain.com/jejak-duit/
+# Upload with File Manager: place inside public_html/jejak-duit/ and rename to .htaccess
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /jejak-duit/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /jejak-duit/index.html [L]
+</IfModule>

@@ -1,0 +1,16 @@
+{
+  "name": "bajet-cpanel-node",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static server for Vite SPA on cPanel Node.js",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
